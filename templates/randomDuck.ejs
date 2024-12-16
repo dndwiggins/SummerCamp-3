@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Duck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Here is your Random Duck!</h1>
+    <img src="<%= url %>" alt="Random Duck">
+    <p><%= message %></p>
+    <form action="/save-duck" method="post">
+        <input type="hidden" name="duckUrl" value="<%= url %>">
+        <label for="duckName">Name your duck:</label>
+        <input type="text" id="duckName" name="duckName" required>
+        <button type="submit">Save Duck</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Ducks</title>
+</head>
+<body>
+    <h1>All Saved Ducks</h1>
+    <% if (ducks.length > 0) { %>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Saved At</th>
+            </tr>
+            <% ducks.forEach(duck => { %>
+                <tr>
+                    <td><%= duck.name %></td>
+                    <td><img src="<%= duck.url %>" alt="Duck" style="max-width: 100px;"></td>
+                    <td><%= new Date(duck.savedAt).toLocaleString() %></td>
+                </tr>
+            <% }); %>
+        </table>
+    <% } else { %>
+        <p>No ducks saved yet!</p>
+    <% } %>
+    <a href="/">Back to Home</a>
+</body>
+</html>
